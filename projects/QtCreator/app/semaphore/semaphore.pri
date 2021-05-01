@@ -13,48 +13,48 @@
 # or otherwise) arising in any way out of the use of this software,
 # even if advised of the possibility of such damage.
 #
-#   File: mutex.pri
+#   File: semaphore.pri
 #
 # Author: $author$
-#   Date: 12/18/2020, 12/22/2020
+#   Date: 12/19/2020, 12/22/2020
 #
-# QtCreator .pri file for fila executable mutex
+# QtCreator .pri file for fila executable semaphore
 ########################################################################
 
 ########################################################################
-# mutex
+# semaphore
 
-# mutex TARGET
+# semaphore TARGET
 #
-mutex_TARGET = mutex
+semaphore_TARGET = semaphore
 
-# mutex INCLUDEPATH
+# semaphore INCLUDEPATH
 #
-mutex_INCLUDEPATH += \
+semaphore_INCLUDEPATH += \
 $${fila_INCLUDEPATH} \
 
-# mutex DEFINES
+# semaphore DEFINES
 #
-mutex_DEFINES += \
+semaphore_DEFINES += \
 $${fila_DEFINES} \
 LOGGING_LEVELS_DEFAULT_ERROR \
-XOS_APP_CONSOLE_MUTEX_MAIN_INSTANCE \
+XOS_APP_CONSOLE_SEMAPHORE_MAIN_INSTANCE \
 
 ########################################################################
-# mutex OBJECTIVE_HEADERS
+# semaphore OBJECTIVE_HEADERS
 #
-#mutex_OBJECTIVE_HEADERS += \
+#semaphore_OBJECTIVE_HEADERS += \
 #$${FILA_SRC}/fila/base/Base.hh \
 
-# mutex OBJECTIVE_SOURCES
+# semaphore OBJECTIVE_SOURCES
 #
-#mutex_OBJECTIVE_SOURCES += \
+#semaphore_OBJECTIVE_SOURCES += \
 #$${FILA_SRC}/fila/base/Base.mm \
 
 ########################################################################
-# mutex HEADERS
+# semaphore HEADERS
 #
-mutex_HEADERS += \
+semaphore_HEADERS += \
 $${NADIR_SRC}/xos/platform/os/posix/sys/time.h \
 $${NADIR_SRC}/xos/platform/os/posix/sys/time.hpp \
 $${NADIR_SRC}/xos/platform/os/oses.hpp \
@@ -70,65 +70,36 @@ $${NADIR_SRC}/xos/os/posix/time.hpp \
 $${NADIR_SRC}/xos/os/apple/osx/time.hpp \
 $${NADIR_SRC}/xos/os/oses.hpp \
 \
-$${FILA_SRC}/xos/platform/microsoft/windows/posix/mutex.h \
-$${FILA_SRC}/xos/platform/microsoft/windows/posix/mutex.hpp \
-\
-$${FILA_SRC}/xos/platform/microsoft/windows/os/mutex.h \
-$${FILA_SRC}/xos/platform/microsoft/windows/os/mutex.hpp \
-\
-$${FILA_SRC}/xos/platform/os/microsoft/windows/Mutex.h \
-$${FILA_SRC}/xos/platform/os/microsoft/windows/Mutex.hpp \
-\
-$${FILA_SRC}/xos/platform/os/oracle/solaris/mutex.h \
-$${FILA_SRC}/xos/platform/os/oracle/solaris/mutex.hpp \
-\
-$${FILA_SRC}/xos/platform/os/mach/lock_set.h \
-$${FILA_SRC}/xos/platform/os/mach/lock_set.hpp \
-\
-$${FILA_SRC}/xos/platform/os/posix/mutex.h \
-$${FILA_SRC}/xos/platform/os/posix/mutex.hpp \
-\
-$${FILA_SRC}/xos/platform/os/platform/mutex.h \
-$${FILA_SRC}/xos/platform/os/platform/mutex.hpp \
-\
-$${FILA_SRC}/xos/mt/apple/osx/mutex.hpp \
-$${FILA_SRC}/xos/mt/linux/mutex.hpp \
-$${FILA_SRC}/xos/mt/mach/mutex.hpp \
-$${FILA_SRC}/xos/mt/microsoft/windows/mutex.hpp \
-$${FILA_SRC}/xos/mt/mutex.hpp \
-$${FILA_SRC}/xos/mt/oracle/solaris/mutex.hpp \
-$${FILA_SRC}/xos/mt/os/os.hpp \
-$${FILA_SRC}/xos/mt/os/mutex.hpp \
-$${FILA_SRC}/xos/mt/os/posix/mutex.hpp \
-$${FILA_SRC}/xos/mt/posix/mutex.hpp \
-$${FILA_SRC}/xos/mt/mutexes.hpp \
-\
-$${FILA_SRC}/xos/app/console/mutex/main_opt.hpp \
-$${FILA_SRC}/xos/app/console/mutex/main.hpp \
-\
 $${NADIR_SRC}/xos/console/main_main.hpp \
+\
+$${FILA_SRC}/xos/mt/apple/mach/semaphore.hpp \
+$${FILA_SRC}/xos/mt/apple/osx/semaphore.hpp \
+$${FILA_SRC}/xos/mt/linux/semaphore.hpp \
+$${FILA_SRC}/xos/mt/mach/semaphore.hpp \
+$${FILA_SRC}/xos/mt/microsoft/windows/semaphore.hpp \
+$${FILA_SRC}/xos/mt/oracle/solaris/semaphore.hpp \
+$${FILA_SRC}/xos/mt/os/posix/semaphore.hpp \
+$${FILA_SRC}/xos/mt/os/semaphore.hpp \
+$${FILA_SRC}/xos/mt/posix/semaphore.hpp \
+$${FILA_SRC}/xos/mt/semaphore.hpp \
 
-# mutex SOURCES
+# semaphore SOURCES
 #
-mutex_SOURCES += \
+semaphore_SOURCES += \
 $${NADIR_SRC}/xos/os/sleep.cpp \
 $${NADIR_SRC}/xos/os/oses.cpp \
-\
-$${FILA_SRC}/xos/mt/os/os.cpp \
-$${FILA_SRC}/xos/mt/mutexes.cpp \
-\
-$${FILA_SRC}/xos/app/console/mutex/main_opt.cpp \
-$${FILA_SRC}/xos/app/console/mutex/main.cpp \
 \
 $${NADIR_SRC}/xos/console/main_main.cpp \
 
 ########################################################################
-# mutex FRAMEWORKS
+# semaphore FRAMEWORKS
 #
-mutex_FRAMEWORKS += \
+semaphore_FRAMEWORKS += \
 $${fila_FRAMEWORKS} \
 
-# mutex LIBS
+# semaphore LIBS
 #
-mutex_LIBS += \
+semaphore_LIBS += \
 $${fila_LIBS} \
+
+

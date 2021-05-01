@@ -16,11 +16,10 @@
 #   File: fila.pri
 #
 # Author: $author$
-#   Date: 12/18/2020
+#   Date: 12/18/2020, 12/22/2020
 #
 # Os specific QtCreator .pri file for fila
 ########################################################################
-
 UNAME = $$system(uname)
 
 contains(UNAME,Darwin) {
@@ -34,9 +33,9 @@ FILA_OS = windows
 } # contains(UNAME,Darwin)
 
 contains(BUILD_OS,FILA_OS) {
-BUILD_OS = $${FILA_OS}
+FILA_BUILD = $${FILA_OS}
 } else {
-BUILD_OS = os
+FILA_BUILD = $${BUILD_OS}
 } # contains(BUILD_OS,FILA_OS)
 
 contains(BUILD_CPP_VERSION,10) {
@@ -48,18 +47,25 @@ CONFIG += c++$${BUILD_CPP_VERSION}
 } # contains(BUILD_CPP_VERSION,98|03|11|14|17)
 } # contains(BUILD_CPP_VERSION,10)
 
-contains(XROSTRA_OS,linux) {
+contains(FILA_OS,macosx) {
+} else {
+contains(FILA_OS,linux) {
 QMAKE_CXXFLAGS += -fpermissive
-}
+} else {
+contains(FILA_OS,windows) {
+} else {
+} # contains(FILA_OS,windows)
+} # contains(FILA_OS,linux)
+} # contains(FILA_OS,macosx)
 
 ########################################################################
 # nadir
-NADIR_THIRDPARTY_PKG_MAKE_BLD = $${NADIR_THIRDPARTY_PKG}/build/$${BUILD_OS}/$${BUILD_CONFIG}
-NADIR_THIRDPARTY_PRJ_MAKE_BLD = $${OTHER_BLD}/$${NADIR_THIRDPARTY_PRJ}/build/$${BUILD_OS}/$${BUILD_CONFIG}
-NADIR_THIRDPARTY_PKG_BLD = $${NADIR_THIRDPARTY_PKG}/build/$${BUILD_OS}/QtCreator/$${BUILD_CONFIG}
-NADIR_THIRDPARTY_PRJ_BLD = $${OTHER_BLD}/$${NADIR_THIRDPARTY_PRJ}/build/$${BUILD_OS}/QtCreator/$${BUILD_CONFIG}
-NADIR_PKG_BLD = $${OTHER_BLD}/$${NADIR_PKG}/build/$${BUILD_OS}/QtCreator/$${BUILD_CONFIG}
-NADIR_PRJ_BLD = $${OTHER_BLD}/$${NADIR_PRJ}/build/$${BUILD_OS}/QtCreator/$${BUILD_CONFIG}
+NADIR_THIRDPARTY_PKG_MAKE_BLD = $${NADIR_THIRDPARTY_PKG}/build/$${FILA_BUILD}/$${BUILD_CONFIG}
+NADIR_THIRDPARTY_PRJ_MAKE_BLD = $${OTHER_BLD}/$${NADIR_THIRDPARTY_PRJ}/build/$${FILA_BUILD}/$${BUILD_CONFIG}
+NADIR_THIRDPARTY_PKG_BLD = $${NADIR_THIRDPARTY_PKG}/build/$${FILA_BUILD}/QtCreator/$${BUILD_CONFIG}
+NADIR_THIRDPARTY_PRJ_BLD = $${OTHER_BLD}/$${NADIR_THIRDPARTY_PRJ}/build/$${FILA_BUILD}/QtCreator/$${BUILD_CONFIG}
+NADIR_PKG_BLD = $${OTHER_BLD}/$${NADIR_PKG}/build/$${FILA_BUILD}/QtCreator/$${BUILD_CONFIG}
+NADIR_PRJ_BLD = $${OTHER_BLD}/$${NADIR_PRJ}/build/$${FILA_BUILD}/QtCreator/$${BUILD_CONFIG}
 #NADIR_LIB = $${NADIR_THIRDPARTY_PKG_MAKE_BLD}/lib
 #NADIR_LIB = $${NADIR_THIRDPARTY_PRJ_MAKE_BLD}/lib
 #NADIR_LIB = $${NADIR_THIRDPARTY_PKG_BLD}/lib
@@ -103,5 +109,3 @@ fila_LIBS += \
 -lrt
 } else {
 } # contains(FILA_OS,linux)
-
-

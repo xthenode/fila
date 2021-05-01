@@ -16,7 +16,7 @@
 #   File: libfila.pri
 #
 # Author: $author$
-#   Date: 12/18/2020
+#   Date: 12/18/2020, 12/22/2020
 #
 # QtCreator .pri file for fila library libfila
 ########################################################################
@@ -39,6 +39,7 @@ $${fila_INCLUDEPATH} \
 #
 libfila_DEFINES += \
 $${fila_DEFINES} \
+LOGGING_LEVELS_DEFAULT_ERROR \
 
 ########################################################################
 # libfila OBJECTIVE_HEADERS

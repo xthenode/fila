@@ -16,27 +16,32 @@
 #   File: fila.pri
 #
 # Author: $author$
-#   Date: 12/18/2020
+#   Date: 12/18/2020, 12/22/2020
 #
 # Build specific QtCreator .pri file for fila
 ########################################################################
+contains(BUILD_OS,Uname) {
 UNAME = $$system(uname)
 
-contains(UNAME,Windows) {
-} else {
 contains(UNAME,Darwin) {
+BUILD_OS = macosx
 } else {
 contains(UNAME,Linux) {
+BUILD_OS = linux
 } else {
-} # contains(UNAME,Linux)
-} # contains(UNAME,Darwin)
-} # contains(UNAME,Windows)
-
-contains(UNAME,Uname) {
-BUILD_OS = FILA_OS
+contains(UNAME,Windows) {
+BUILD_OS = windows
 } else {
 BUILD_OS = os
-} # contains(UNAME,Uname)
+} # contains(UNAME,Windows)
+} # contains(UNAME,Linux)
+} # contains(UNAME,Darwin)
+} else {
+contains(BUILD_OS,FILA_OS) {
+} else {
+BUILD_OS = os
+} # contains(BUILD_OS,FILA_OS)
+} # contains(BUILD_OS,Uname)
 
 #BUILD_CPP_VERSION = 11
 

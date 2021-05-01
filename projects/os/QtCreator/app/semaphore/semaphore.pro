@@ -13,64 +13,64 @@
 # or otherwise) arising in any way out of the use of this software,
 # even if advised of the possibility of such damage.
 #
-#   File: fila.pro
+#   File: semaphore.pro
 #
 # Author: $author$
-#   Date: 12/18/2020, 12/22/2020
+#   Date: 12/19/2020, 12/22/2020
 #
-# QtCreator .pro file for fila executable fila
+# QtCreator .pro file for fila executable semaphore
 ########################################################################
 include(../../../../../build/QtCreator/fila.pri)
 include(../../../../QtCreator/fila.pri)
 include(../../fila.pri)
-include(../../../../QtCreator/app/fila/fila.pri)
+include(../../../../QtCreator/app/semaphore/semaphore.pri)
 
-TARGET = $${fila_exe_TARGET}
+TARGET = $${semaphore_TARGET}
 
 ########################################################################
 # INCLUDEPATH
 #
 INCLUDEPATH += \
-$${fila_exe_INCLUDEPATH} \
+$${semaphore_INCLUDEPATH} \
 
 # DEFINES
 # 
 DEFINES += \
-$${fila_exe_DEFINES} \
+$${semaphore_DEFINES} \
 
 ########################################################################
 # OBJECTIVE_HEADERS
 #
 OBJECTIVE_HEADERS += \
-$${fila_exe_OBJECTIVE_HEADERS} \
+$${semaphore_OBJECTIVE_HEADERS} \
 
 # OBJECTIVE_SOURCES
 #
 OBJECTIVE_SOURCES += \
-$${fila_exe_OBJECTIVE_SOURCES} \
+$${semaphore_OBJECTIVE_SOURCES} \
 
 ########################################################################
 # HEADERS
 #
 HEADERS += \
-$${fila_exe_HEADERS} \
-$${fila_exe_OBJECTIVE_HEADERS} \
+$${semaphore_HEADERS} \
+$${semaphore_OBJECTIVE_HEADERS} \
 
 # SOURCES
 #
 SOURCES += \
-$${fila_exe_SOURCES} \
+$${semaphore_SOURCES} \
 
 ########################################################################
 # FRAMEWORKS
 #
 FRAMEWORKS += \
-$${fila_exe_FRAMEWORKS} \
+$${semaphore_FRAMEWORKS} \
 
 # LIBS
 #
 LIBS += \
-$${fila_exe_LIBS} \
+$${semaphore_LIBS} \
 $${FRAMEWORKS} \
 
 

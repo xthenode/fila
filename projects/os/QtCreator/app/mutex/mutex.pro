@@ -16,11 +16,10 @@
 #   File: mutex.pro
 #
 # Author: $author$
-#   Date: 12/18/2020
+#   Date: 12/18/2020, 12/22/2020
 #
 # QtCreator .pro file for fila executable mutex
 ########################################################################
-include(../../../../../../build/QtCreator/fila.pri)
 include(../../../../../build/QtCreator/fila.pri)
 include(../../../../QtCreator/fila.pri)
 include(../../fila.pri)

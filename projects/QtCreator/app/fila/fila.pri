@@ -16,7 +16,7 @@
 #   File: fila.pri
 #
 # Author: $author$
-#   Date: 12/18/2020
+#   Date: 12/18/2020, 12/22/2020
 #
 # QtCreator .pri file for fila executable fila
 ########################################################################
@@ -37,7 +37,7 @@ $${fila_INCLUDEPATH} \
 #
 fila_exe_DEFINES += \
 $${fila_DEFINES} \
-LOGGING_LEVELS_DEFAULT=LOGGING_LEVELS_ERROR \
+LOGGING_LEVELS_DEFAULT_ERROR \
 XOS_APP_CONSOLE_FILA_MAIN_INSTANCE \
 
 ########################################################################
